@@ -20,10 +20,11 @@ def index():
 		template_id=TEMPLATE_ID,
 		subject='<subject>',
 		message='<message>',
-		signers=[{ 'role_name': '<role>', 
-					'email_address': '<email>', 
-					'name': '<name>' }],
-		)
+		signers=[{ 
+			'role_name': '<role>', 
+			'email_address': '<email>', 
+			'name': '<name>' 
+			}])
 	embed_id = client.get_embedded_object(embedded_sign.signatures[0].signature_id)
 	sign_url = str(embed_id.sign_url)
 	return render_template('index.html', client_id=HS_CLIENT_ID, sign_url=sign_url)
@@ -38,8 +39,8 @@ def callback():
 		event_type = details['event']['event_type']
 		event_hash = details['event']['event_hash']
 		h = hmac.new(HS_APP_KEY.encode(), (str(event_time+event_type)).encode(), hashlib.sha256).hexdigest()
-		valid = (h == event_hash)
-		if valid:
+		valid_check = (h == event_hash)
+		if valid_check:
 			return "Hello API Event Received"
 		else:
 			return "Invalid Data received"
