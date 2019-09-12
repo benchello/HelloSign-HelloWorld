@@ -16,7 +16,7 @@ def index():
 	client = HSClient(api_key=HS_APP_KEY)
 	embedded_sign = client.send_signature_request_embedded_with_template(
 		test_mode=True,
-		client_id=HS_CLIENT_ID
+		client_id=HS_CLIENT_ID,
 		template_id=TEMPLATE_ID,
 		subject='<subject>',
 		message='<message>',
