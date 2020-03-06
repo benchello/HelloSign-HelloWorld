@@ -14,6 +14,7 @@ A template for getting started with HelloSign Embedded Signatures <br />
     ~~~
 4. CD into local repository and Deploy to Heroku:
     ~~~
+    $ heroku login
     $ heroku remote -a my-heroku-project-name
     $ heroku push master
     ~~~
