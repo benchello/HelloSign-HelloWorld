@@ -5,7 +5,7 @@ dominate==2.3.5
 Flask==1.0.2
 gunicorn==19.5.0
 hellosign-python-sdk==3.8.7
-httplib2==0.13.0
+httplib2==0.18.0
 idna==2.8
 itsdangerous==1.1.0
 Jinja2==2.10.1
